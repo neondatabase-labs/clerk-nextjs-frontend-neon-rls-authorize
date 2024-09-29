@@ -1,4 +1,4 @@
-# Neon Authorize + Clerk RLS Example (SQL from the Frontend)
+# Neon Authorize + Clerk Example (SQL from the Frontend)
 
 This repository is a guided getting started example for Neon Authorize + Clerk.
 
