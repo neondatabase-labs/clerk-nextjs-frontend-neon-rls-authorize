@@ -37,7 +37,7 @@ export function TodosProvider({ children }: { children: React.ReactNode }) {
       // performance reasons.
       setTodos(
         (await getDb(authToken)(
-          `select * from todos where user_id = auth.user_id()`,
+          `select * from todos where user_id = auth.user_id() order by inserted_at asc`,
         )) as Array<Todo>,
       );
     }
