@@ -1,13 +1,14 @@
 "use client";
 
 import { getDb } from "@/app/db";
-import { useContext } from "react";
-import { TodosContext } from "@/app/todos-provider";
+import { Todo, TodosContext } from "@/app/todos-provider";
 import { useSession } from "@clerk/nextjs";
+import { useContext, useRef } from "react";
 
 export function AddTodoForm() {
   const { todos, setTodos } = useContext(TodosContext);
   const { session } = useSession();
+  const formRef = useRef<HTMLFormElement>(null);
 
   if (todos === null) {
     return null;
@@ -31,7 +32,7 @@ export function AddTodoForm() {
     }
 
     if (todos === null) {
-      throw new Error("Todos is not null");
+      throw new Error("Todos is null");
     }
 
     const todo = (
@@ -42,10 +43,11 @@ export function AddTodoForm() {
     )[0];
 
     setTodos([...todos, todo]);
+    formRef.current?.reset();
   }
 
   return (
-    <form action={insertTodoFormAction}>
+    <form ref={formRef} action={insertTodoFormAction}>
       <input required name="newTodo"></input>
       &nbsp;<button type="submit">Add Todo</button>
     </form>
