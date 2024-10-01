@@ -2,7 +2,10 @@
 
 import { getDb } from "@/app/db";
 import { useSession } from "@clerk/nextjs";
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
 import { createContext, useEffect, useState } from "react";
+import * as schema from "./schema";
 
 export type Todo = {
   id: string;
@@ -39,6 +42,13 @@ export function TodosProvider({ children }: { children: React.ReactNode }) {
         (await getDb(authToken)(
           `select * from todos where user_id = auth.user_id() order by inserted_at asc`,
         )) as Array<Todo>,
+      );
+
+      const db = drizzle(
+        neon(process.env.NEXT_PUBLIC_DATABASE_AUTHENTICATED_URL!, {
+          authToken,
+        }),
+        { schema },
       );
     }
 
