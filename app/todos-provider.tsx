@@ -5,15 +5,8 @@ import { useSession } from "@clerk/nextjs";
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { createContext, useEffect, useState } from "react";
-import * as schema from "./schema";
-
-export type Todo = {
-  id: string;
-  user_id: string;
-  task: string;
-  is_complete: boolean;
-  inserted_at: Date;
-};
+import * as schema from "@/app/schema";
+import { Todo } from "@/app/schema";
 
 export const TodosContext = createContext<{
   todos: Array<Todo> | null;
