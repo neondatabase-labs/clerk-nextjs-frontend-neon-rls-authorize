@@ -1,5 +1,5 @@
 {
-  "id": "dacebe51-a803-4a25-afb5-6055389fc36e",
+  "id": "297c4d28-08cb-4b19-8340-3139cc868416",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -56,12 +56,51 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
+      "uniqueConstraints": {},
+      "policies": {
+        "create todos": {
+          "name": "create todos",
+          "as": "PERMISSIVE",
+          "for": "INSERT",
+          "to": [
+            "authenticated"
+          ],
+          "withCheck": "(select auth.user_id() = user_id)"
+        },
+        "view todos": {
+          "name": "view todos",
+          "as": "PERMISSIVE",
+          "for": "SELECT",
+          "to": [
+            "authenticated"
+          ],
+          "using": "(select auth.user_id() = user_id)"
+        },
+        "update todos": {
+          "name": "update todos",
+          "as": "PERMISSIVE",
+          "for": "UPDATE",
+          "to": [
+            "authenticated"
+          ],
+          "using": "(select auth.user_id() = user_id)"
+        },
+        "delete todos": {
+          "name": "delete todos",
+          "as": "PERMISSIVE",
+          "for": "DELETE",
+          "to": [
+            "authenticated"
+          ],
+          "using": "(select auth.user_id() = user_id)"
+        }
+      }
     }
   },
   "enums": {},
   "schemas": {},
   "sequences": {},
+  "roles": {},
   "_meta": {
     "columns": {},
     "schemas": {},

@@ -34,7 +34,7 @@
   "devDependencies": {
     "bun-types": "^1.1.29",
     "dotenv": "^16.4.5",
-    "drizzle-kit": "^0.25.0-225f91d",
+    "drizzle-kit": "^0.25.0-a5ec472",
     "postgres": "^3.4.4"
   }
 }
