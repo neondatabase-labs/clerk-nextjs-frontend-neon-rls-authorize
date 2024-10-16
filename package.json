@@ -7,17 +7,20 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "lint": "next lint"
+    "lint": "next lint",
+    "drizzle:generate": "drizzle-kit generate",
+    "drizzle:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
     "@clerk/nextjs": "^5.1.5",
-    "@neondatabase/serverless": "github:neondatabase/serverless#release-jwt-token",
+    "@neondatabase/serverless": "^0.10.1",
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "@types/react-syntax-highlighter": "^15.5.11",
     "autoprefixer": "^10.4.16",
     "clsx": "^2.1.1",
+    "drizzle-orm": "^0.34.0-b75016b",
     "next": "^14.2.3",
     "postcss": "^8.4.33",
     "prettier": "^3.3.3",
@@ -31,6 +34,7 @@
   "devDependencies": {
     "bun-types": "^1.1.29",
     "dotenv": "^16.4.5",
+    "drizzle-kit": "^0.25.0-a5ec472",
     "postgres": "^3.4.4"
   }
 }
