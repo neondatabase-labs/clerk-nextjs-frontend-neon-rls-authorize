@@ -13,7 +13,7 @@ sending SQL queries to the database. The database is enforcing authorization usi
 6. Head to the Neon Console, and find "Authorize"
 7. Inside Authorize, click "Add Authentication Provider", and paste in the JWKS Endpoint URL you copied earlier
 8. Follow the steps in the UI to setup the roles for Neon Authorize. You should ignore the schema related steps if you're following this guide.
-9. Clone this repository and run `npm install`
+9. Clone this repository and run `npm install` or `bun install`
 10. Create a `.env` file in the root of this project and add the following:
 
 ```
@@ -26,6 +26,9 @@ NEXT_PUBLIC_DATABASE_AUTHENTICATED_URL=
 
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+# This is needed for drizzle:migrate, grab from Neon's dashboard (database owner role)
+DATABASE_URL=
 ```
 
 11. Run `npm run drizzle:migrate` or `bun run drizzle:migrate` to apply the migrations
