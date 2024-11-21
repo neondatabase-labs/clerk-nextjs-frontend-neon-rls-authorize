@@ -5,8 +5,8 @@ It consists of a todo list application, and the frontend is directly
 sending SQL queries to the database. The database is enforcing authorization using
 [Postgres RLS](https://www.postgresql.org/docs/current/ddl-rowsecurity.html).
 
-1. Create a Neon project
-2. Create a Clerk Application
+1. Create a Neon project ( [pg.new](https://pg.new/) )
+2. Create a Clerk Application ( https://go.clerk.com/cHq4Ut6 ) 
 3. Head to the Clerk dashboard, and find "JWT Templates"
 4. Create a JWT Template ("Blank") and give it any name (e.g., "my-jwt-template")
 5. Copy the "JWKS Endpoint" URL and save it for later
