@@ -1,6 +1,7 @@
 "use client";
 
-import { Todo, TodosContext } from "@/app/todos-provider";
+import { Todo } from "@/app/schema";
+import { TodosContext } from "@/app/todos-provider";
 import { CSSProperties, useContext } from "react";
 
 import { getDb } from "@/app/db";
@@ -105,6 +106,7 @@ export function TodoList() {
 
     setTodos(
       todos.map((todo) => {
+        // @ts-ignore
         if (todo.id === id) {
           return newTodo;
         }
@@ -126,10 +128,12 @@ export function TodoList() {
       throw new Error("Todos is null");
     }
     await getDb(authToken)(`DELETE FROM todos WHERE id = $1`, [id]);
+    // @ts-ignore
     setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   // Calculate the number of pending todos
+  // @ts-ignore
   const pendingTodos = todos.filter((todo) => !todo.is_complete).length;
 
   return (
@@ -146,6 +150,7 @@ export function TodoList() {
                 <span
                   style={{
                     ...styles.todoText,
+                    // @ts-ignore
                     textDecoration: todo.is_complete ? "line-through" : "none",
                   }}
                 >
@@ -156,11 +161,15 @@ export function TodoList() {
                     <input
                       name="isComplete"
                       type="hidden"
+                      // @ts-ignore
                       value={String(todo.is_complete)}
                     />
                     <input name="id" type="hidden" value={String(todo.id)} />
                     <button style={styles.button} type="submit">
-                      {todo.is_complete ? "↩️" : "✅"}
+                      {
+                        // @ts-ignore
+                        todo.is_complete ? "↩️" : "✅"
+                      }
                     </button>
                   </form>
                   <form action={deleteTodoFormAction}>

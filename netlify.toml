@@ -1,0 +1,27 @@
+[build]
+  command = "export NODE_ENV=development && npm install && export NODE_ENV=production && npm run build"
+
+[build.environment]
+  NEXT_TELEMETRY_DISABLED = "1"
+  NODE_VERSION = "20"
+
+# Production context
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+# Development context (deploys from git branches)
+[context.branch-deploy]
+  environment = { NODE_ENV = "development" }
+
+# Preview context (deploy previews from pull/merge requests)
+[context.deploy-preview]
+  environment = { NODE_ENV = "development" }
+
+# Environment variables that need to be set in Netlify UI
+[template.environment]
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = "Required: Your Clerk publishable key"
+  CLERK_SECRET_KEY = "Required: Your Clerk secret key"
+  DATABASE_URL = "Required: NeonDB owner role connection string"
+  NEXT_PUBLIC_DATABASE_AUTHENTICATED_URL = "Required: NeonDB authenticated role connection string"
+  NEXT_PUBLIC_CLERK_SIGN_IN_URL = "Your custom sign-in URL (enter '/sign-in' for this example)"
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL = "Your custom sign-up URL (enter '/sign-up' for this example)"

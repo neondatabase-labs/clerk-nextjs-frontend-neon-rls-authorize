@@ -1,7 +1,8 @@
 "use client";
 
 import { getDb } from "@/app/db";
-import { Todo, TodosContext } from "@/app/todos-provider";
+import { Todo } from "@/app/schema";
+import { TodosContext } from "@/app/todos-provider";
 import { useAuth } from "@clerk/nextjs";
 import { CSSProperties, useContext, useRef } from "react";
 
