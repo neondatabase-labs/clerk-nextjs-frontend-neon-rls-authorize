@@ -118,6 +118,7 @@ Before deploying to production:
 - [Simplify RLS with Drizzle](https://neon.tech/docs/guides/neon-authorize-drizzle)
 - [Clerk Documentation](https://clerk.com/docs)
 - [Postgres RLS](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+- [Neon Authorize + Clerk Integration](https://neon.tech/docs/guides/neon-authorize-clerk)
 
 ## Authors
 
