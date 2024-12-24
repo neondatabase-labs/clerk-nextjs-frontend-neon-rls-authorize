@@ -22,9 +22,9 @@ A quick start Next.js template demonstrating secure user authentication and auth
 
 Deploy directly to your preferred hosting platform:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dhanushreddy291/clerk-nextjs-frontend-neon-authorize&env=NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,CLERK_SECRET_KEY,DATABASE_URL,NEXT_PUBLIC_DATABASE_AUTHENTICATED_URL,NEXT_PUBLIC_CLERK_SIGN_IN_URL,NEXT_PUBLIC_CLERK_SIGN_UP_URL&project-name=clerk-neon-authorize&repository-name=clerk-neon-authorize)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dhanushreddy291/clerk-nextjs-frontend-neon-authorize)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/dhanushreddy291/clerk-nextjs-frontend-neon-authorize)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/neondatabase-labs/clerk-nextjs-frontend-neon-authorize&env=NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,CLERK_SECRET_KEY,DATABASE_URL,NEXT_PUBLIC_DATABASE_AUTHENTICATED_URL,NEXT_PUBLIC_CLERK_SIGN_IN_URL,NEXT_PUBLIC_CLERK_SIGN_UP_URL&project-name=clerk-neon-authorize&repository-name=clerk-neon-authorize)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/neondatabase-labs/clerk-nextjs-frontend-neon-authorize)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/neondatabase-labs/clerk-nextjs-frontend-neon-authorize)
 
 ## Local Development Setup
 
@@ -55,7 +55,7 @@ Deploy directly to your preferred hosting platform:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/dhanushreddy291/clerk-nextjs-frontend-neon-authorize
+    git clone https://github.com/neondatabase-labs/clerk-nextjs-frontend-neon-authorize
     cd clerk-nextjs-neon-authorize
     ```
 
